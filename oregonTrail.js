@@ -4,11 +4,12 @@ app.use(express.static('public'))
 app.get('/', function (req, res) {
 res.sendFile('views/index.html', {root: __dirname })
 })
-
-
-app.get('/', function (req, res) {
-  res.send('Hello World!')
+app.get('/mainmenu', function (req, res) {
+res.sendFile('views/mainmenu.html', {root: __dirname })
 })
+
+
+
 
 
 app.listen(1337, function () {
