@@ -1,13 +1,18 @@
 {
-  "name": "lab5-server",
+  "name": "lab6",
   "version": "1.0.0",
-  "description": "package.json",
-  "main": "lab5-server.js",
+  "description": "Lab 6",
+  "main": "oregonTrail.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/MaristGormanly/Lab-6.git"
+  },
   "keywords": [
-    "lab5"
+    "Lab",
+    "6"
   ],
   "author": "Cameron Ulrich",
   "license": "ISC"
