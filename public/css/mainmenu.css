@@ -1,0 +1,42 @@
+body{background: black; font-family: verdana; color: #fff; padding: 30px;}
+			h1{font-size: 48px; text-transform: uppercase; letter-spacing: 2px; text-align: : center;}
+			p{font-size: 16px; text-align: center;}
+.container {  
+  position:fixed;
+  z-index: 100;  
+  top:50%;  
+  left:43%;  
+  margin:-100px 0 0 -100px;  
+  width:2000px;  
+  height:2000px;  
+
+
+}  
+.vertical-menu {
+    width: 200px; /* Set a width if you like */
+    position:absolute;
+	left:68%;top:50%;
+	z-index:1000;
+	margin-left:-375px;
+}
+
+.vertical-menu a {
+    background-color: transparent; /* Grey background color */
+    color: white; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    text-align:center;
+
+}
+
+.vertical-menu a:hover {
+    background-color: transparent; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+
