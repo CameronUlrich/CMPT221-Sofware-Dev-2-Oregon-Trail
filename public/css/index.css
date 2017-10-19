@@ -11,25 +11,37 @@ body{background: black; font-family: verdana; color: #fff; padding: 30px;}
   width:2000px;  
   height:2000px;  
 
+
+
 }  
 
-#container p {
-    margin-top: 25px;
-    font-size: 21px;
-    text-align: center;
-
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       
+@-webkit-keyframes fade-in{
+from{
+    opacity:1;
+    top:0px;
+}
+to{
+    opacity:0;
+    top: 0px;
 }
 
 
+}
+.text-animated-one{
+display:inline;
+position:relative;
+left:4%; 
+top:0px;
+-webkit-animation:fade-in 1s infinite;
+
+}
 
 
+.aggettivi{
+display:inline;
 
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+width:100px;
+height:100px;
 }
 
 

@@ -1,0 +1,117 @@
+<div id="leaderboard"></div>
+    <h2 class="title">
+      <title>Oregon Trail Top 10</title>
+      <img src="/img/OREG_150x150-button.jpg" alt="Oregon Trail" height="250" width="250" align = left>
+    </h2>
+  	<body>
+		
+		<div class="container">
+			<h1>Oregon Trail Top 10</h1>
+			<!--<embed src="music\MotivationalCinematicBackgroundMusicRoyaltyFree.mp3" autostart="true" loop="true" hidden="true">-->
+		<script type="text/javascript">
+			 	var cars = ["Cameron", "Test", "Test", "Test", "Test", "Test", "Test", "Test", "Test", "Test"];
+  				var score = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+  				var date = new Array("10/18/2017", "10/18/2017", "10/18/2017", "10/18/2017", "10/18/2017", "10/18/2017", "10/18/2017", "10/18/2017", "10/18/2017", "10/18/2017");
+		</script>
+	<table id="table" border="1" width="40%">
+            
+            <!-- The Row Number 0 -->
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+                <th>Date</th>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+        </table>
+        <script>
+            
+            var array = [[name[0],score[0], date[0]],
+                         [name[1],score[1], date[1]],
+                         [name[2],score[2], date[2]],
+                         [name[3],score[3], date[3]],
+                         [name[4],score[4], date[4]],
+                         [name[5],score[5], date[5]],
+                         [name[6],score[6], date[6]],
+                         [name[7],score[7], date[7]],
+                         [name[8],score[8], date[8]],
+                         [name[9],score[9], date[9]]],
+                table = document.getElementById("table");
+        
+        
+        // rows
+        for(var i = 1; i < table.rows.length; i++)
+        {
+          // cells
+          for(var j = 0; j < table.rows[i].cells.length; j++)
+          {
+              table.rows[i].cells[j].innerHTML = array[i - 1][j];
+          }
+        }
+    </script>
+            
+		</div>
+  </div>
+  
+<link rel="stylesheet" type="text/css" href="/css/topten.css">
+<link rel="stylesheet" type="text/css" href="/css/global.css">
+<script type="text/javascript" src="js/topten.js"></script>

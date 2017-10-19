@@ -29,9 +29,9 @@ function toggleSound() {
     sessionStorage.setItem('soundStatus', currentSound)
 
     var myElement = document.getElementById("soundMenuItem");
-    myElement.innerHTML = "Turn Sound " + (currentSound ? "Off" : "On &nbsp;&nbsp;"); 
+    //myElement.innerHTML = "Turn Sound " + (currentSound ? "Off" : "On &nbsp;&nbsp;"); 
     
-    //(window["isSoundOn"]) ? isSoundOn = true : isSoundOn = false;
+    (window["isSoundOn"]) ? isSoundOn = true : isSoundOn = false;
     checkSound();
 
 }
@@ -52,7 +52,7 @@ document.body.addEventListener("keydown", function (event) {
 
  document.body.addEventListener("keydown", function (event) {
     if (event.keyCode === 52) {
-        checkSound()
+        checkSound();
         toggleSound();
     }
 });
