@@ -27,6 +27,47 @@ res.setHeader('Content-Type', 'text/html');
 res.send(gameScreen);
 })
 
+var game = require('./controllers/gameController');
+app.get('/game/saveProfession/:profession', function(req, res) {
+// get the screen
+var gameScreen = game.saveProfession[req.params.profession];
+//console.log("\n this is the main node file! \n" + gameScreen)
+// return the html
+res.setHeader('Content-Type', 'text/html');
+res.send(gameScreen);
+})
+
+var game = require('./controllers/gameController');
+app.get('/game/savePlayerName/:playerId/:playerName', function(req, res) {
+// get the screen
+var gameScreen = game.savePlayerName[req.params.playerId.playerName];
+//console.log("\n this is the main node file! \n" + gameScreen)
+// return the html
+res.setHeader('Content-Type', 'text/html');
+res.send(gameScreen);
+})
+
+var game = require('./controllers/gameController');
+app.get('/game/saveStartMonth/:startMonth', function(req, res) {
+// get the screen
+var gameScreen = game.saveStartMonth[req.params.startMonth];
+//console.log("\n this is the main node file! \n" + gameScreen)
+// return the html
+res.setHeader('Content-Type', 'text/html');
+res.send(gameScreen);
+})
+
+var game = require('./controllers/gameController');
+app.get('/game/getSettings', function(req, res) {
+// get the screen
+var gameScreen = game.getSettings[req.params.getSettings];
+//console.log("\n this is the main node file! \n" + gameScreen)
+// return the html
+res.setHeader('Content-Type', 'text/html');
+res.send(gameScreen);
+})
+
+
 
 
 
