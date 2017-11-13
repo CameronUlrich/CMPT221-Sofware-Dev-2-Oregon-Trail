@@ -60,7 +60,7 @@ res.send(gameScreen);
 var game = require('./controllers/gameController');
 app.get('/game/getSettings', function(req, res) {
 // get the screen
-var gameScreen = game.getSettings[req.params.getSettings];
+var gameScreen = game.getSettings;
 //console.log("\n this is the main node file! \n" + gameScreen)
 // return the html
 res.setHeader('Content-Type', 'text/html');
