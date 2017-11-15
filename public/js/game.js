@@ -164,6 +164,43 @@ document.getElementById("gameContainer").addEventListener("click", function(e){
 			
 			
 		    }
+
+		if(currentScreen == 3)
+		{
+			if(e.target.id == "marchItem"){
+				gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "march");
+			}
+
+			if(e.target.id == "aprilItem"){
+				gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "april");
+			}
+
+			if(e.target.id == "mayItem"){
+				gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "may");
+			}
+
+			if(e.target.id == "juneItem"){
+				gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "june");
+			}
+
+			if(e.target.id == "julyItem"){
+				gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "july");
+			}
+
+			
+			
+		    }
+
 		});
 /*
 			document.body.addEventListener("keydown", function (event) {
