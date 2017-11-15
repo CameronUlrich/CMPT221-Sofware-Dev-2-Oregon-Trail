@@ -69,21 +69,22 @@ res.send(gameScreen);
 
 var profession = require('./controllers/gameController');
 app.get('/game/saveProfession/:profession', function(req, res){
-	game.gameSettings.Profession[req.params.professionId] = req.params.Profession
+	game.getSettings.profession[req.params.professionId] = req.params.profession
+	console.log("settings : " + this.profession);
+
+	res.setHeader('Content-Type', 'text/plain');
+	res.send(game.getSettings.profession);
+})
+
+var playerNames = require('./controllers/gameController');
+app.get('/game/savePlayerName/:playerId/:playerName', function(req, res){
+	game.getSettings.playerNames[req.params.playerId] = req.params.playerNames
 	console.log("settings : " + game.gameSettings);
 
 	res.setHeader('Content-Type', 'text/plain');
-	res.send(game.gameSettings.Profession);
+	res.send(game.gameSettings.playerNames);
 })
 
-/*
-app.get('/game/savePlayerName/:playerName', function(req, res){
-	console.log("settings : " + game.gameSettings);
-
-	res.setHeader('Content-Type', 'text/plain');
-	res.send(game.gameSettings.Profession);
-})
-*/
 
 
 

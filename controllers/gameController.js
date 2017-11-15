@@ -10,7 +10,7 @@ exports.getSettings = [];
 function gameSettings(){
 	this.playerNames = [];
 	this.profession = "";
-	this.startMoney = 0;
+	this.startMoney = 1500;
 	this.startMonth = "";
 }
 exports.getSettings.push(gameSettings);
@@ -24,10 +24,13 @@ var playerNames = '{ "playerNames" : [' +
 '{ "firstName": },' +
 '{ "firstName": } ]}';
 
-var settings = '{ "playerNames" : [' +
-'{ "firstName": },' +
-'{ "firstName": },' +
-'{ "firstName": } ]}';
+var startMoney = '{ "Start Money" : [' +
+'{ "startMoney": }]}';
+
+var startMonth = '{ "Start Month" : [' +
+'{ "startMonth": }]}';
+
+var settings = professions + playerNames + startMoney + startMonth;
 
 /*var startGame1 = "<a href=>Be a banker from Boston</a><br>"
 			+ "<a href=>Be a carpenter from Ohio</a><br>"
@@ -92,6 +95,20 @@ var startGame4 =
 exports.startGameScreens.push(startGame4);
 
 
+var startGame5 = "<p>Congratulations! You are ready to start your journey!</p>"
++ "<p>Here are your settings you set for this game:</p>"
++ "<ol id=\"playerSettings\" >"
++ "<li id=\"wagonLeaderNameSetting\">Wagon Leader: </li><br />"
++ "<li id=\"memberName1\">Member: </li><br />"
++ "<li id=\"memberName2\">Member: </li><br />"
++ "<li id=\"memberName3\">Member: </li><br />"
++ "<li id=\"memberName4\">Member: </li><br />"
++ "<li id=\"professionSetting\">Your Profession: </li><br />"
++ "<li id=\"bankSetting\">Current Bank account: 1500</li><br />"
++ "<li id=\"monthSetting\">Month leaving: </li><br />"
++ "</ol>"
+
+exports.startGameScreens.push(startGame5);
 //var saveProfession1 = professions;
 // add our screen to the exports so it is available
 //exports.saveProfession.push(saveProfession1);
