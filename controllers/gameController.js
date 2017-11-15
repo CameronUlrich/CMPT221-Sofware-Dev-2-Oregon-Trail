@@ -40,10 +40,10 @@ var settings = '{ "playerNames" : [' +
 var startGame1 = "<p>Many kinds of people made the trip trip to Oregon.</p>"
 + "<p>You may:</p>"
 + "<ol id=\"setupQuestions1\" >"
-+ "<li id=\"bankerMenuItem\">Be a banker from Boston</li>"
-+ "<li id=\"carpenterMenuItem\">Be a carpenter from Ohio</li>"
-+ "<li id=\"farmerMenuItem\">Be a farmer from Illinois</li>"
-+ "<li id=\"differencesMenuItem\">Find out the differences between the choices</li>"
++ "<li id=\"bankerMenuItem\">Be a banker from Boston</li><br />"
++ "<li id=\"carpenterMenuItem\">Be a carpenter from Ohio</li><br />"
++ "<li id=\"farmerMenuItem\">Be a farmer from Illinois</li><br />"
++ "<li id=\"differencesMenuItem\">Find out the differences between the choices</li><br />"
 + "</ol>"
 + "<div id=\"selectedOption\">What is your choice?</div>";
 // add our screen to the exports so it is available
@@ -54,9 +54,9 @@ exports.startGameScreens.push(startGame1);
 
 var startGame2 = 
 + "<ol id=\"GetProfession1\" >"
-+ "<li id=\"WagonLeaderName\">What is the first name of the Wagon Leader?</li>"
-+ "<input name=\"WagonLeaderNameInput\">What is the first name of the Wagon Leader?</li><br />"
-+ "<button test=\"WagonLeaderNameButton\">Next</li>"
++ "<li id=\"WagonLeaderName\">What is the first name of the Wagon Leader?</li><br />"
++ "<input id=\"WagonLeaderNameInput\">What is the first name of the Wagon Leader?</li><br />"
++ "<button id=\"WagonLeaderNameButton\">Next</li>"
 + "</ol>"
 // add our screen to the exports so it is available
 exports.startGameScreens.push(startGame2);
@@ -66,18 +66,27 @@ exports.startGameScreens.push(startGame2);
 var startGame3 = 
 + "<ol id=\"GetNames1\" >"
 + "<li id=\"WagonPartyNames\">What are the names of the other members of your party?</li><br />"
-+ "<input name=\"WagonLeaderNameInput1\">What is the first name of the Wagon Leader?</li><br />"
-+ "<input name=\"WagonLeaderNameInput2\">What is the second name of the Wagon Leader?</li><br />"
-+ "<input name=\"WagonLeaderNameInput3\">What is the third name of the Wagon Leader?</li><br />"
-+ "<input name=\"WagonLeaderNameInput4\">What is the fourth name of the Wagon Leader?</li>"
++ "<input id=\"WagonPartyNameInput1\">What is the first name of the Wagon Leader?</li><br />"
++ "<input id=\"WagonPartyNameInput2\">What is the second name of the Wagon Leader?</li><br />"
++ "<input id=\"WagonPartyNameInput3\">What is the third name of the Wagon Leader?</li><br />"
++ "<input id=\"WagonPartyNameInput4\">What is the fourth name of the Wagon Leader?</li><br />"
++ "<button id=\"WagonPartyNameButton\">Next</li>"
 + "</ol>"
 // add our screen to the exports so it is available
 exports.startGameScreens.push(startGame3);
 
 var startGame4 = 
-+ "<ol id=\"GetDifferences\" >"
-+ "<li id=\"GetDifferencesText\">What are the names of the other members of your party?</li>"
++ "<ol id=\"GetMonth1\" >"
++ "<li id=\"GetMonthText\">The year is 1848. You are leaving from Missouri. When do you want to leave Missouri?</li>"
++ "<ol id=\"setupQuestionsMonth\" ><br />"
++ "<li id=\"marchItem\">March</li><br />"
++ "<li id=\"aprilItem\">April</li><br />"
++ "<li id=\"mayItem\">May</li><br />"
++ "<li id=\"juneItem\">June</li><br />"
++ "<li id=\"julyItem\">July</li><br />"
 + "</ol>"
++ "<div id=\"selectedOptionMonth\">What is your choice?</div>";
+
 // add our screen to the exports so it is available
 exports.startGameScreens.push(startGame4);
 

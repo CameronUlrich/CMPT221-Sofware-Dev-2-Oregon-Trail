@@ -21,7 +21,7 @@ gameScreen(0);
 
 
 
-
+/*
 
 	       function saveProfession(profession)
 	    {
@@ -99,7 +99,7 @@ gameContainer.addEventListener("click".function(e){
 });
 
 
-
+*/
 var setupQuestions1 = document.getElementById("setupQuestions1");
 var bankerMenuItem = document.getElementById("bankerMenuItem");
 
@@ -109,23 +109,63 @@ window.onload = function(){
 var currentScreen = 0;
 var text;
 
-
+document.getElementById("gameContainer").addEventListener("click", function(e){
 		if(currentScreen == 0)
 		{
-			if(targetElement.id == "bankerMenuItem"){
+			if(e.target.id == "bankerMenuItem"){
 				gameScreen(1);
 		        currentScreen++;
+		        fetch('/game/saveProfession/' + "banker");
 			}
-			document.body.addEventListener("keydown", function (event) {
-		    if (event.keyCode === 49) {
-		        gameScreen(1);
+
+			if(e.target.id == "carpenterMenuItem"){
+				gameScreen(1);
 		        currentScreen++;
-		        fetch('/game/saveProfession/' + profession);
+		        fetch('/game/saveProfession/' + "carpenter");
+			}
 
+			if(e.target.id == "farmerMenuItem"){
+				gameScreen(1);
+		        currentScreen++;
+		        fetch('/game/saveProfession/' + "farmer");
+			}
 
+			
+			
+		    }
+
+		if(currentScreen == 1)
+		{
+			if(e.target.id == "WagonLeaderNameButton"){
+				gameScreen(2);
+		        currentScreen++;
+		        fetch('/game/savePlayerName/' + '1/' + 'WagonLeaderNameInput');
+			}
+
+			
+
+			
+			
+		    }
+
+		if(currentScreen == 2)
+		{
+			if(e.target.id == "WagonPartyNameButton"){
+				gameScreen(3);
+		        currentScreen++;
+		        fetch('/game/savePlayerName/' + '2/' + 'WagonPartyNameInput1');
+		        fetch('/game/savePlayerName/' + '3/' + 'WagonPartyNameInput2');
+		        fetch('/game/savePlayerName/' + '4/' + 'WagonPartyNameInput3');
+		        fetch('/game/savePlayerName/' + '5/' + 'WagonPartyNameInput4');
+			}
+
+			
+
+			
+			
 		    }
 		});
-
+/*
 			document.body.addEventListener("keydown", function (event) {
 		    if (event.keyCode === 50) {
 		        gameScreen(1);
@@ -184,7 +224,7 @@ var text;
 
 		}
 
-
+*/
 
 /*switch(button) {
     case bankerMenuItem:
