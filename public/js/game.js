@@ -118,6 +118,7 @@ document.getElementById("gameContainer").addEventListener("click", function(e){
 		        fetch('/game/saveProfession/' + "banker");
 			}
 
+
 			if(e.target.id == "carpenterMenuItem"){
 				gameScreen(1);
 		        currentScreen++;
@@ -164,7 +165,6 @@ document.getElementById("gameContainer").addEventListener("click", function(e){
 			
 			
 		    }
-
 		if(currentScreen == 3)
 		{
 			if(e.target.id == "marchItem"){
@@ -202,6 +202,105 @@ document.getElementById("gameContainer").addEventListener("click", function(e){
 		    }
 
 		});
+
+
+
+
+
+			
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 49)  {
+		    	if(currentScreen == 0){
+		        gameScreen(1);
+		        currentScreen++;
+		        fetch('/game/saveProfession/' + "banker");
+		    }
+
+
+		    }
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 50) {
+		    	if(currentScreen == 0){
+		        gameScreen(1);
+		        currentScreen++;
+		        fetch('/game/saveProfession/' + "carpenter");
+		    }
+		}
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 51) {
+		    	if(currentScreen == 0){
+		        gameScreen(1);
+		        currentScreen++;
+		        fetch('/game/saveProfession/' + "farmer");
+		    }
+		}
+		});
+
+			
+
+		
+
+
+		
+			
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 49) {
+		    	if(currentScreen == 3){
+		        gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "march");
+		        }
+
+		    }
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 50) {
+		    	if(currentScreen == 3){
+		        gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "april");
+		    }
+		}
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 51) {
+		    	if(currentScreen == 3){
+		        gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "may");
+		    }
+		}
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 52) {
+		    	if(currentScreen == 3){
+		        gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "june");
+		    }
+		}
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 53) {
+		    	if(currentScreen == 3){
+		        gameScreen(4);
+		        currentScreen++;
+		        fetch('/game/saveStartMonth/' + "july");
+		    }
+		}
+		});
+
+			
+
+		
 /*
 			document.body.addEventListener("keydown", function (event) {
 		    if (event.keyCode === 50) {

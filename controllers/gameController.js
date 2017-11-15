@@ -13,6 +13,7 @@ function gameSettings(){
 	this.startMoney = 0;
 	this.startMonth = "";
 }
+exports.getSettings.push(gameSettings);
 
 
 var professions = '{ "Profession" : [' +
