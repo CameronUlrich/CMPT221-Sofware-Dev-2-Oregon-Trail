@@ -1,10 +1,10 @@
 var exports = module.exports = {};
 // Create an empty array to contain our screens
 exports.startGameScreens = [];
-exports.saveProfession = [];
-exports.savePlayerName = [];
-exports.saveStartMonth = [];
-exports.getSettings = [];
+//exports.saveProfession = [];
+//exports.savePlayerName = [];
+//exports.saveStartMonth = [];
+//exports.getSettings = [];
 // create a string that will contain the first screen HTML
 
 function gameSettings(){
@@ -13,9 +13,9 @@ function gameSettings(){
 	this.startMoney = 1500;
 	this.startMonth = "";
 }
-exports.getSettings.push(gameSettings);
+exports.gameSettings = new gameSettings();
 
-
+/*
 var professions = '{ "Profession" : [' +
 '{ "profession": }]}';
 
@@ -32,7 +32,7 @@ var startMonth = '{ "Start Month" : [' +
 
 var settings = professions + playerNames + startMoney + startMonth;
 
-/*var startGame1 = "<a href=>Be a banker from Boston</a><br>"
+var startGame1 = "<a href=>Be a banker from Boston</a><br>"
 			+ "<a href=>Be a carpenter from Ohio</a><br>"
 			+ "<a href=>Be a farmer from Illinois</a><br>"
 			+ "<a href=>Find out the differences between the choices</a><br>";
@@ -109,19 +109,19 @@ var startGame5 = "<p>Congratulations! You are ready to start your journey!</p>"
 + "</ol>"
 
 exports.startGameScreens.push(startGame5);
-var saveProfession1 = professions;
+//var saveProfession1 = professions;
 // add our screen to the exports so it is available
-exports.saveProfession.push(saveProfession1);
+//exports.saveProfession.push(saveProfession1);
 
-var savePlayerName1 = "<p>Many kinds of people made the trip trip to Oregon.</p>";
+//var savePlayerName1 = "<p>Many kinds of people made the trip trip to Oregon.</p>";
 // add our screen to the exports so it is available
-exports.savePlayerName.push(savePlayerName1);
+//exports.savePlayerName.push(savePlayerName1);
 
-var saveStartMonth1 = "<p>Many kinds of people made the trip trip to Oregon.</p>";
+//var saveStartMonth1 = "<p>Many kinds of people made the trip trip to Oregon.</p>";
 // add our screen to the exports so it is available
-exports.saveStartMonth.push(saveStartMonth1);
+//exports.saveStartMonth.push(saveStartMonth1);
 
-var saveSettings1 = settings;
+//var saveSettings1 = settings;
 // add our screen to the exports so it is available
-exports.getSettings.push(saveSettings1);
+//exports.getSettings.push(saveSettings1);
 

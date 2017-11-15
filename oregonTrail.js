@@ -27,27 +27,27 @@ res.setHeader('Content-Type', 'text/html');
 res.send(gameScreen);
 })
 
-var game = require('./controllers/gameController');
-app.get('/game/saveProfession/:profession', function(req, res) {
+//var game = require('./controllers/gameController');
+//app.get('/game/saveProfession/:profession', function(req, res) {
 // get the screen
-var gameScreen = game.saveProfession[req.params.profession];
+//var gameScreen = game.saveProfession[req.params.profession];
 //console.log("\n this is the main node file! \n" + gameScreen)
 // return the html
-res.setHeader('Content-Type', 'text/html');
-res.send(gameScreen);
-})
+//res.setHeader('Content-Type', 'text/html');
+//res.send(gameScreen);
+//})
 
-var game = require('./controllers/gameController');
-app.get('/game/savePlayerName/:playerId/:playerName', function(req, res) {
+//var game = require('./controllers/gameController');
+//app.get('/game/savePlayerName/:playerId/:playerName', function(req, res) {
 // get the screen
-var gameScreen = game.savePlayerName[req.params.playerId.playerName];
+//var gameScreen = game.savePlayerName[req.params.playerId.playerName];
 //console.log("\n this is the main node file! \n" + gameScreen)
 // return the html
-res.setHeader('Content-Type', 'text/html');
-res.send(gameScreen);
-})
+//res.setHeader('Content-Type', 'text/html');
+//res.send(gameScreen);
+//})
 
-var game = require('./controllers/gameController');
+//var game = require('./controllers/gameController');
 app.get('/game/saveStartMonth/:startMonth', function(req, res) {
 // get the screen
 var gameScreen = game.saveStartMonth[req.params.startMonth];
@@ -57,28 +57,28 @@ res.setHeader('Content-Type', 'text/html');
 res.send(gameScreen);
 })
 
-var game = require('./controllers/gameController');
+//var game = require('./controllers/gameController');
 app.get('/game/getSettings', function(req, res) {
 // get the screen
-var gameScreen = game.getSettings;
+var gameScreen = game.gameSettings;
 //console.log("\n this is the main node file! \n" + gameScreen)
 // return the html
 res.setHeader('Content-Type', 'application/json');
 res.send(gameScreen);
 })
 
-var profession = require('./controllers/gameController');
+//var profession = require('./controllers/gameController');
 app.get('/game/saveProfession/:profession', function(req, res){
-	game.getSettings.profession[req.params.professionId] = req.params.profession
-	console.log("settings : " + this.profession);
+	game.gameSettings.profession = req.params.profession
+	console.log("settings : " + req.params.profession);
 
 	res.setHeader('Content-Type', 'text/plain');
-	res.send(game.getSettings.profession);
+	res.send(game.gameSettings.profession);
 })
 
-var playerNames = require('./controllers/gameController');
+//var playerNames = require('./controllers/gameController');
 app.get('/game/savePlayerName/:playerId/:playerName', function(req, res){
-	game.getSettings.playerNames[req.params.playerId] = req.params.playerNames
+	game.gameSettings.playerNames[req.params.playerId] = req.params.playerName
 	console.log("settings : " + game.gameSettings);
 
 	res.setHeader('Content-Type', 'text/plain');
