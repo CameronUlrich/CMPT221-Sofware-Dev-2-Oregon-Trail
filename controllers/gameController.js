@@ -109,9 +109,9 @@ var startGame5 = "<p>Congratulations! You are ready to start your journey!</p>"
 + "</ol>"
 
 exports.startGameScreens.push(startGame5);
-//var saveProfession1 = professions;
+var saveProfession1 = professions;
 // add our screen to the exports so it is available
-//exports.saveProfession.push(saveProfession1);
+exports.saveProfession.push(saveProfession1);
 
 var savePlayerName1 = "<p>Many kinds of people made the trip trip to Oregon.</p>";
 // add our screen to the exports so it is available
