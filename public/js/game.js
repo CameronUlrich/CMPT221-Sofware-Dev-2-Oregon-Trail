@@ -140,7 +140,7 @@ document.getElementById("gameContainer").addEventListener("click", function(e){
 			if(e.target.id == "WagonLeaderNameButton"){
 				gameScreen(2);
 		        currentScreen++;
-		        fetch('/game/savePlayerName/' + '1/' + 'WagonLeaderNameInput');
+		        fetch('/game/savePlayerName/' + '1/' + document.getElementById('WagonLeaderNameInput').value);
 			}
 
 			
@@ -154,10 +154,10 @@ document.getElementById("gameContainer").addEventListener("click", function(e){
 			if(e.target.id == "WagonPartyNameButton"){
 				gameScreen(3);
 		        currentScreen++;
-		        fetch('/game/savePlayerName/' + '2/' + 'WagonPartyNameInput1');
-		        fetch('/game/savePlayerName/' + '3/' + 'WagonPartyNameInput2');
-		        fetch('/game/savePlayerName/' + '4/' + 'WagonPartyNameInput3');
-		        fetch('/game/savePlayerName/' + '5/' + 'WagonPartyNameInput4');
+		        fetch('/game/savePlayerName/' + '2/' + document.getElementById("WagonPartyNameInput1").value);
+		        fetch('/game/savePlayerName/' + '3/' + document.getElementById("WagonPartyNameInput2").value);
+		        fetch('/game/savePlayerName/' + '4/' + document.getElementById("WagonPartyNameInput3").value);
+		        fetch('/game/savePlayerName/' + '5/' + document.getElementById("WagonPartyNameInput4").value);
 			}
 
 			
@@ -201,7 +201,7 @@ document.getElementById("gameContainer").addEventListener("click", function(e){
 			
 		    }
 
-		
+
 
 		});
 

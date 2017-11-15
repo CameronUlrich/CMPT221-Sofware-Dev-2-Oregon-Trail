@@ -48,14 +48,14 @@ res.send(gameScreen);
 //})
 
 //var game = require('./controllers/gameController');
-app.get('/game/saveStartMonth/:startMonth', function(req, res) {
+//app.get('/game/saveStartMonth/:startMonth', function(req, res) {
 // get the screen
-var gameScreen = game.saveStartMonth[req.params.startMonth];
+//var gameScreen = game.saveStartMonth[req.params.startMonth];
 //console.log("\n this is the main node file! \n" + gameScreen)
 // return the html
-res.setHeader('Content-Type', 'text/html');
-res.send(gameScreen);
-})
+//res.setHeader('Content-Type', 'text/html');
+//res.send(gameScreen);
+//})
 
 //var game = require('./controllers/gameController');
 app.get('/game/getSettings', function(req, res) {
@@ -83,6 +83,14 @@ app.get('/game/savePlayerName/:playerId/:playerName', function(req, res){
 
 	res.setHeader('Content-Type', 'text/plain');
 	res.send(game.gameSettings.playerNames);
+})
+
+app.get('/game/saveStartMonth/:startMonth', function(req, res){
+	game.gameSettings.startMonth = req.params.startMonth
+	console.log("settings : " + game.gameSettings);
+
+	res.setHeader('Content-Type', 'text/plain');
+	res.send(game.gameSettings.startMonth);
 })
 
 
