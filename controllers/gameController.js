@@ -7,12 +7,16 @@ exports.saveStartMonth = [];
 exports.getSettings = [];
 // create a string that will contain the first screen HTML
 
+function gameSettings(){
+	this.playerNames = [];
+	this.profession = "";
+	this.startMoney = 0;
+	this.startMonth = "";
+}
 
 
-var professions = '{ "Professions" : [' +
-'{ "firstName": },' +
-'{ "firstName": },' +
-'{ "firstName": } ]}';
+var professions = '{ "Profession" : [' +
+'{ "profession": }]}';
 
 var playerNames = '{ "playerNames" : [' +
 '{ "firstName": },' +
@@ -30,6 +34,7 @@ var settings = '{ "playerNames" : [' +
 			+ "<a href=>Find out the differences between the choices</a><br>";
 			exports.startGameScreens.push(startGame1);
 */
+
 
 
 var startGame1 = "<p>Many kinds of people made the trip trip to Oregon.</p>"
@@ -50,7 +55,8 @@ exports.startGameScreens.push(startGame1);
 var startGame2 = 
 + "<ol id=\"GetProfession1\" >"
 + "<li id=\"WagonLeaderName\">What is the first name of the Wagon Leader?</li>"
-+ "<input name=\"WagonLeaderNameInput\">What is the first name of the Wagon Leader?</li>"
++ "<input name=\"WagonLeaderNameInput\">What is the first name of the Wagon Leader?</li><br />"
++ "<button test=\"WagonLeaderNameButton\">Next</li>"
 + "</ol>"
 // add our screen to the exports so it is available
 exports.startGameScreens.push(startGame2);
@@ -59,7 +65,11 @@ exports.startGameScreens.push(startGame2);
 
 var startGame3 = 
 + "<ol id=\"GetNames1\" >"
-+ "<li id=\"WagonPartyNames\">What are the names of the other members of your party?</li>"
++ "<li id=\"WagonPartyNames\">What are the names of the other members of your party?</li><br />"
++ "<input name=\"WagonLeaderNameInput1\">What is the first name of the Wagon Leader?</li><br />"
++ "<input name=\"WagonLeaderNameInput2\">What is the second name of the Wagon Leader?</li><br />"
++ "<input name=\"WagonLeaderNameInput3\">What is the third name of the Wagon Leader?</li><br />"
++ "<input name=\"WagonLeaderNameInput4\">What is the fourth name of the Wagon Leader?</li>"
 + "</ol>"
 // add our screen to the exports so it is available
 exports.startGameScreens.push(startGame3);
@@ -72,9 +82,9 @@ var startGame4 =
 exports.startGameScreens.push(startGame4);
 
 
-var saveProfession1 = professions;
+//var saveProfession1 = professions;
 // add our screen to the exports so it is available
-exports.saveProfession.push(saveProfession1);
+//exports.saveProfession.push(saveProfession1);
 
 var savePlayerName1 = "<p>Many kinds of people made the trip trip to Oregon.</p>";
 // add our screen to the exports so it is available

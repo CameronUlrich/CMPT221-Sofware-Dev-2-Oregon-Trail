@@ -37,11 +37,12 @@ function toggleSound() {
 
 
   
-
+/*
  document.body.addEventListener("keydown", function (event) {
     if (event.keyCode === 52) {
         checkSound();
         toggleSound();
     }
 });
+*/
 

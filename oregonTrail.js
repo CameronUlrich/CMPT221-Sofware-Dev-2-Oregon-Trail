@@ -63,12 +63,27 @@ app.get('/game/getSettings', function(req, res) {
 var gameScreen = game.getSettings;
 //console.log("\n this is the main node file! \n" + gameScreen)
 // return the html
-res.setHeader('Content-Type', 'text/html');
+res.setHeader('Content-Type', 'application/json');
 res.send(gameScreen);
 })
 
+var profession = require('./controllers/gameController');
+app.get('/game/saveProfession/:profession', function(req, res){
+	game.gameSettings.Profession[req.params.professionId] = req.params.Profession
+	console.log("settings : " + game.gameSettings);
 
+	res.setHeader('Content-Type', 'text/plain');
+	res.send(game.gameSettings.Profession);
+})
 
+/*
+app.get('/game/savePlayerName/:playerName', function(req, res){
+	console.log("settings : " + game.gameSettings);
+
+	res.setHeader('Content-Type', 'text/plain');
+	res.send(game.gameSettings.Profession);
+})
+*/
 
 
 

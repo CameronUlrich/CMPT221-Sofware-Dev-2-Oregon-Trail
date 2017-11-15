@@ -18,14 +18,178 @@ gameContainer.innerHTML = data;
 gameScreen(0);
 
 
+
+
+
+
+
+	       function saveProfession(profession)
+	    {
+
+		fetch('/game/saveProfession/' + profession).then(function(response)
+		{
+
+			if(response.status !== 200) 
+			{
+
+				console.log('problem with ajax call!' + response.status + " msg: " + 
+					response.value);
+				return;
+			}
+			response.text().then(function(data)
+
+		}
+	      };
+
+
+
+gameContainer.addEventListener("click".function(e){
+	var targetElement = event.target || event.arcElement;
+	if(currentScreen == 0){
+		if(targetElement.id == "bankerMenuItem"){
+			saveProfession("banker");
+			currentScreen++;
+			gameScreen();
+		}
+		if(targetElement.id == "carpenterMenuItem"){
+			saveProfession("carpenter");
+			currentScreen++;
+			gameScreen();
+		}
+		if(targetElement.id == "farmerMenuItem"){
+			saveProfession("farmer");
+			currentScreen++;
+			gameScreen();
+		}
+	}
+}
+
+function savePlayerName(playerName){
+	fetch('/game/savePlayerName/' + playerName).then(function(response){
+		if(response.status !== 200) {
+			console.log('problem with ajax call!' + response.status + " msg: " + 
+				response.value);
+			return;
+		}
+		response.text().then(function(data)
+			
+	}
+};
+
+
+gameContainer.addEventListener("click".function(e){
+	var targetElement = event.target || event.arcElement;
+	if(currentScreen == 1){
+		if(e.target.id == "bankerMenuItem"){
+			saveProfession("banker");
+			currentScreen++;
+			gameScreen();
+		}
+		if(e.target.id == "carpenterMenuItem"){
+			saveProfession("carpenter");
+			currentScreen++;
+			gameScreen();
+		}
+		if(e.target.id == "farmerMenuItem"){
+			saveProfession("farmer");
+			currentScreen++;
+			gameScreen();
+		}
+	}
+});
+
+
+
+var setupQuestions1 = document.getElementById("setupQuestions1");
+var bankerMenuItem = document.getElementById("bankerMenuItem");
+
 window.onload = function(){
-
+	
+}
+var currentScreen = 0;
 var text;
-var button = document.getElementById("setupQuestions1").value;
 
-switch(button) {
-    case "bankerMenuItem":
-        
+
+		if(currentScreen == 0)
+		{
+			if(targetElement.id == "bankerMenuItem"){
+				gameScreen(1);
+		        currentScreen++;
+			}
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 49) {
+		        gameScreen(1);
+		        currentScreen++;
+		        fetch('/game/saveProfession/' + profession);
+
+
+		    }
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 50) {
+		        gameScreen(1);
+		        currentScreen++;
+		    }
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 51) {
+		        gameScreen(1);
+		        currentScreen++;
+		    }
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 52) {
+		        gameScreen(1);
+		        currentScreen++;
+		    }
+		});
+
+		}
+
+		if(currentScreen == 1)
+		{
+			
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 49) {
+		        gameScreen(1);
+		        currentScreen = gameScreen(1);
+
+
+		    }
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 50) {
+		        gameScreen(1);
+		        currentScreen = gameScreen(1);
+		    }
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 51) {
+		        gameScreen(1);
+		        currentScreen = gameScreen(1);
+		    }
+		});
+
+			document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 52) {
+		        gameScreen(1);
+		        currentScreen = gameScreen(1);
+		    }
+		});
+
+		}
+
+
+
+/*switch(button) {
+    case bankerMenuItem:
+        text = "bankerMenuItem";
+
         console.log("Test");
         myFunction();
     
@@ -43,22 +207,21 @@ switch(button) {
         myFunction();
         break;
 }
-
 }
+*/
 
 
 
 
-function myFunction() {
-window.onload = function(){
-var button = document.getElementById("bankerMenuItem");
-button.onclick = function(){
-	gameScreen(1);
-  //do stuff
-}
-}
-  }
+
+
+
+
+
+
 /*
+
+
 
 
 
@@ -92,10 +255,14 @@ button3.onclick = function(){
 
 
 
+document.getElementById("gameContainer").onclick = function() {myFunction()};
 
+function myFunction() {
+    document.getElementById("bankerMenuItem").innerHTML = gameScreen(1);
+}
 document.body.addEventListener("keydown", function (event) {
     if (event.keyCode === 49) {
-        gameScreen(1);
+        gameScreen(2);
     }
 });
 */
