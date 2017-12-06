@@ -17,7 +17,21 @@ gameContainer.innerHTML = data;
 
 gameScreen(0);
 
+function saveProfession(profession){
+	fetch('/game/saveProfession/' + profession).then(function(response) {
+if (response.status !== 200) {
+console.log('problem with ajax call! ' + response.status + " msg: " +
+response.value);
+return;
+}
+response.text().then(function(data) {
+// send the html returned back to the
+//console.log("received back: " + data);
+//gameContainer.innerHTML = data;
+})
+});
 
+}
 
 
 
@@ -204,6 +218,8 @@ document.getElementById("gameContainer").addEventListener("click", function(e){
 
 
 		});
+
+		
 
 
 
@@ -443,11 +459,14 @@ document.body.addEventListener("keydown", function (event) {
         gameScreen(2);
     }
 });
+
 */
-document.onkeypress = function (e) {
-    if (e.keyCode === 32) {
-        gameScreen(0);
-        console.log("spacebar pressed");
-    }
-  }
-  
+document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 32) {
+		    	if(currentScreen == 4){
+		        window.location.replace("/trail");
+		        
+		    }
+		}
+		});
+

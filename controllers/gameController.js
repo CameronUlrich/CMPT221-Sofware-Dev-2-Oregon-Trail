@@ -106,6 +106,7 @@ var startGame5 = "<p>Congratulations! You are ready to start your journey!</p>"
 + "<li id=\"professionSetting\">Your Profession: </li><br />"
 + "<li id=\"bankSetting\">Current Bank account: 1500</li><br />"
 + "<li id=\"monthSetting\">Month leaving: </li><br />"
++ "<li id=\"goToTrail\">Press Spacebar to start your journey!</li><br />"
 + "</ol>"
 
 exports.startGameScreens.push(startGame5);
