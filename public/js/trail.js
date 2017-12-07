@@ -1,8 +1,22 @@
+//window.alert("test");
+
+
+
+/*
 document.body.addEventListener("keydown", function (event) {
 		    if (event.keyCode === 32) {
-		    	if(currentScreen == 4){
-		        window.location.replace("/trail");
+		    	
+		        
+		        window.onload = function () {
+				document.getElementById("text");
+				document.getElementById("currentPace").innerHTML = "test";
+				}
+
 		        
 		    }
-		}
+		    
+		
 		});
+
+
+*/
