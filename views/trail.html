@@ -135,7 +135,7 @@
         
     }
   }
-
+var alwaysTrue
   document.body.addEventListener("keydown", function (event) {
 		    if (event.keyCode === 13)  {
 
@@ -158,7 +158,35 @@
 		    	document.getElementById('milesNumber').innerHTML = traveledMiles;
 		    	document.getElementById('currPace').innerHTML = theCurrentPace;
 		    	document.getElementById('memberNumber').innerHTML = playersAlive;
-		    	document.getElementById("wagon").style.left=-10 + "px";
+		    	var leftStr = document.getElementById("wagon").style.left;
+
+			   var indexOfpx = leftStr.indexOf("px");
+
+			   var num = leftStr.substring(0, indexOfpx); // extract the number part
+
+			   var leftSteadyPx = Number(num) - 50 + "px"; 
+			   var leftStrenPx = Number(num) - 75 + "px"; 
+			   var leftGruPx = Number(num) - 103 + "px"; 
+			   var leftRestingPx = Number(num) - 0 + "px"; 
+			  
+
+
+			   if(theCurrentPace == "Steady"){
+			   	document.getElementById("wagon").style.left = leftSteadyPx;
+			   }
+			   else if(theCurrentPace == "Strenuous"){
+			   	document.getElementById("wagon").style.left = leftStrenPx;
+			   }
+			   else if(theCurrentPace == "Grueling"){
+			   	document.getElementById("wagon").style.left = leftGruPx;
+			   }
+			   else if(theCurrentPace == "Resting"){
+			   	document.getElementById("wagon").style.left = leftRestingPx;
+			   }
+			   
+			   
+
+
 		    	document.getElementById('currTerrain').innerHTML = terrainName;
 		    	if(paceVal != 4){
 		    	var imgChange = document.getElementById('trailPics');
