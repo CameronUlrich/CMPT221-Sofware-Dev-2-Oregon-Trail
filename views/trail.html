@@ -37,7 +37,7 @@
       <script type="text/javascript">
          <!--
          	var days = 0;
-         	var terrainName = "test"
+         	var playersAlive = 5;
          	var health = 100;
          	var milesPerDay = 0;
          	var traveledMiles = 0;
@@ -50,8 +50,7 @@
   			"/img/desert.jpg"
 				];
 
-				
-				function getTerrain(){
+				/*function getTerrain(){
 					
 					var imgID = document.getElementById('trailPics');
 					if (imgID.src = "/img/grassland.jpg")
@@ -80,6 +79,7 @@
 
 					}
 				}
+				*/
 
 
             function getValue(){
@@ -135,18 +135,23 @@
 		    if (event.keyCode === 13)  {
 		    	gameValues();
 
-		    	getTerrain();
+		    	//getTerrain();
+		    	var terrainName = "Nowhere";
 
 		    	days += 1;
 		    	document.getElementById('daysNumber').innerHTML = days;
+		    	document.getElementById('groupHealth').innerHTML = health;
 		    	document.getElementById('milesNumber').innerHTML = traveledMiles;
 		    	document.getElementById('currPace').innerHTML = theCurrentPace;
+		    	document.getElementById('memberNumber').innerHTML = playersAlive;
 
 		    	document.getElementById('currTerrain').innerHTML = terrainName;
 		    	if(paceVal != 4){
 		    	var imgChange = document.getElementById('trailPics');
 				
 				    imgChange.src = images[Math.floor(Math.random() * images.length)];
+
+				    
 				}
 				
 		    }
