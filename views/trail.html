@@ -20,7 +20,7 @@
 
 			<div class= "text">
 				<ol id=\"infoBox\" >
-				<li id=\"daysOnTheTrail\">Days on the Trail: </li>
+				<li id=\"daysOnTheTrail\">Days on the Trail:</li>
 				<li id=\"milesTraveled\">Miles Traveled: </li>
 				<li id=\"currentWeather\">Current Weather: </li>
 				<li id=\"currentHealth\">Current Health: </li>
@@ -35,15 +35,37 @@
       
       <script type="text/javascript">
          <!--
+         	var days = 0;
+
             function getValue(){
-               var paceVal = prompt("Select a Pace:\n1. Steady\n2. Strenuous\n3.Grueling\n4.Resting", "Enter number here");
+              window.paceVal = prompt("Select a Pace:\n1. Steady\n2. Strenuous\n3.Grueling\n4.Resting", "Enter number here");
+               
                console.log(paceVal);
             }
+            function paceValue(){
+            	if(paceVal == 1){
+            		console.log("test");
+            	}
+            	if(paceVal == 2){
+            		console.log("test2");
+            	}
+            	if(paceVal == 3){
+            		console.log("test3");
+            	}
+            	if(paceVal == 4){
+            		console.log("test4");
+            	}
+            	else{
+            		window.paceError = alert("That is not a valid answer!");
+            		
+            	}
+            }
+
 
              document.onkeypress = function (e) {
     if (e.keyCode === 32) {
         getValue();
-        
+        paceValue();
     }
   }
   
