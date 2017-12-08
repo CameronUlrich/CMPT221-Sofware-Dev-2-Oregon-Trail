@@ -20,13 +20,13 @@
 
 			<div class= "text">
 				<ol id=\"infoBox\" >
-				<li id=\"daysOnTheTrail\">Days on the Trail:</li>
-				<li id=\"milesTraveled\">Miles Traveled: </li>
-				<li id=\"currentWeather\">Current Weather: </li>
-				<li id=\"currentHealth\">Current Health: </li>
-				<li id=\"currentPace\">Current Pace: </li>
-				<li id=\"currentTerrain\">Current Trail: </li>
-				<li id=\"numPartyMembers\">Number of Party Members: </li>
+				<li id=\"daysOnTheTrail\">Days on the Trail: <span id= "daysNumber"></span></li>
+				<li id=\"milesTraveled\">Miles Traveled: <span id="milesNumber"></span></li>
+				<li id=\"currentWeather\">Current Weather: <span id="weather"></span></li>
+				<li id=\"currentHealth\">Current Health: <span id="groupHealth"></span></li>
+				<li id=\"currentPace\">Current Pace: <span id="currPace"></span></li>
+				<li id=\"currentTerrain\">Current Terrain: <span id="currTerrain"></span></li>
+				<li id=\"numPartyMembers\">Number of Party Members:<span id="memberNumber"></span> </li>
 
 				</ol>
 			</div>
@@ -36,38 +36,75 @@
       <script type="text/javascript">
          <!--
          	var days = 0;
+         	var health = 100;
+         	var milesPerDay = 0;
+         	var traveledMiles = 0;
+
+
 
             function getValue(){
               window.paceVal = prompt("Select a Pace:\n1. Steady\n2. Strenuous\n3.Grueling\n4.Resting", "Enter number here");
                
                console.log(paceVal);
             }
-            function paceValue(){
+            function gameValues(){
             	if(paceVal == 1){
-            		console.log("test");
+            		milesPerDay = 20;
+            		traveledMiles += 20;
+            		console.log("Steady");
             	}
-            	if(paceVal == 2){
-            		console.log("test2");
+            	else if(paceVal == 2){
+            		milesPerDay = 25;
+            		traveledMiles += 25;
+         			health -= 3;
+            		console.log("Strenuous");
             	}
-            	if(paceVal == 3){
-            		console.log("test3");
+            	else if(paceVal == 3){
+            		milesPerDay = 30;
+            		traveledMiles += 30;
+         			health -= 8;
+            		console.log("Grueling");
             	}
-            	if(paceVal == 4){
-            		console.log("test4");
+            	else if(paceVal == 4){
+            		milesPerDay = 0;
+            		
+         			health += 5;
+            		console.log("Resting");
             	}
             	else{
             		window.paceError = alert("That is not a valid answer!");
-            		
+
             	}
+            	console.log(health);
+         		console.log(milesPerDay);
+         		console.log(traveledMiles);
             }
+
+
+           
 
 
              document.onkeypress = function (e) {
     if (e.keyCode === 32) {
         getValue();
-        paceValue();
+        gameValues();
     }
   }
+
+  document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 13)  {
+		    	gameValues();
+		    	days += 1;
+		    	document.getElementById('daysNumber').innerHTML = days;
+		    	document.getElementById('milesNumber').innerHTML = traveledMiles;
+		    }
+
+
+		    
+		});
+
+
+
   
          //-->
       </script>
