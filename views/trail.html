@@ -14,9 +14,9 @@
 			<img id = "trailPics" src="/img/grassland.jpg" alt="Grassland" width="1450" height="600" align="middle">
 			
 			
-
+			
 			<div class="wagon">
-			<img id = "wagon" src="/img/wagon.png"  width="125" height="100">
+			<img id = "wagon" src="/img/wagon.png"  width="125" height="100" style="position: absolute;">
 			</div>
 
 			<div class= "text">
@@ -107,9 +107,14 @@
             	}
             	else if(paceVal == 4){
             		milesPerDay = 0;
-            		
+            		if(health < 100){
          			health += 5;
-            		theCurrentPace = "Resting";
+         		}
+         		else if(health > 100){
+         			health = 100;
+            		
+         		}
+         		theCurrentPace = "Resting";
             	}
             	else{
             		window.paceError = alert("That is not a valid answer!");
@@ -133,6 +138,15 @@
 
   document.body.addEventListener("keydown", function (event) {
 		    if (event.keyCode === 13)  {
+
+		    	
+
+
+
+
+
+
+
 		    	gameValues();
 
 		    	//getTerrain();
@@ -144,7 +158,7 @@
 		    	document.getElementById('milesNumber').innerHTML = traveledMiles;
 		    	document.getElementById('currPace').innerHTML = theCurrentPace;
 		    	document.getElementById('memberNumber').innerHTML = playersAlive;
-
+		    	document.getElementById("wagon").style.left=-10 + "px";
 		    	document.getElementById('currTerrain').innerHTML = terrainName;
 		    	if(paceVal != 4){
 		    	var imgChange = document.getElementById('trailPics');
@@ -161,7 +175,7 @@
 		});
 
 
-
+			
   
          //-->
       </script>
