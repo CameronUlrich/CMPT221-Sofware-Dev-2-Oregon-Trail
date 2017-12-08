@@ -39,7 +39,7 @@
          	var health = 100;
          	var milesPerDay = 0;
          	var traveledMiles = 0;
-
+         	var theCurrentPace = "Not Moving";
 
 
             function getValue(){
@@ -51,25 +51,25 @@
             	if(paceVal == 1){
             		milesPerDay = 20;
             		traveledMiles += 20;
-            		console.log("Steady");
+            		theCurrentPace = "Steady";
             	}
             	else if(paceVal == 2){
             		milesPerDay = 25;
             		traveledMiles += 25;
          			health -= 3;
-            		console.log("Strenuous");
+            		theCurrentPace = "Strenuous";
             	}
             	else if(paceVal == 3){
             		milesPerDay = 30;
             		traveledMiles += 30;
          			health -= 8;
-            		console.log("Grueling");
+            		theCurrentPace = "Grueling";
             	}
             	else if(paceVal == 4){
             		milesPerDay = 0;
             		
          			health += 5;
-            		console.log("Resting");
+            		theCurrentPace = "Resting";
             	}
             	else{
             		window.paceError = alert("That is not a valid answer!");
@@ -97,6 +97,7 @@
 		    	days += 1;
 		    	document.getElementById('daysNumber').innerHTML = days;
 		    	document.getElementById('milesNumber').innerHTML = traveledMiles;
+		    	document.getElementById('currPace').innerHTML = theCurrentPace;
 		    }
 
 
