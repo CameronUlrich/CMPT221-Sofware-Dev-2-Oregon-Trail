@@ -27,6 +27,19 @@ body{background: black; font-family: verdana; color: #fff; padding: 30px;}
 
 }  
 
+.terrains.center {  
+  position:fixed;
+  z-index: 100;  
+  top:50%;  
+  left:43%;  
+  margin:-100px 0 0 -100px;  
+  width:2000px;  
+  height:2000px;  
+  align-content: center;
+
+
+}  
+
 .text {  
   position:fixed;
   z-index: 100;  

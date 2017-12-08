@@ -10,9 +10,10 @@
 		<div class="container">
 		
 			</div>
-		<div class="terrains">
-			<img id = "grassland" src="/img/grassland.jpg" alt="Grassland" width="1450" height="600" align="middle">
-			</div>
+		
+			<img id = "trailPics" src="/img/grassland.jpg" alt="Grassland" width="1450" height="600" align="middle">
+			
+			
 
 			<div class="wagon">
 			<img id = "wagon" src="/img/wagon.png"  width="125" height="100">
@@ -36,10 +37,49 @@
       <script type="text/javascript">
          <!--
          	var days = 0;
+         	var terrainName = "test"
          	var health = 100;
          	var milesPerDay = 0;
          	var traveledMiles = 0;
          	var theCurrentPace = "Not Moving";
+         	var images = [
+ 			"/img/grassland.jpg",
+ 			"/img/mountains.jpg",
+  			"/img/plains.jpg",
+  			"/img/forest.jpg",
+  			"/img/desert.jpg"
+				];
+
+				
+				function getTerrain(){
+					
+					var imgID = document.getElementById('trailPics');
+					if (imgID.src = "/img/grassland.jpg")
+					{
+						terrainName = "Grassland";
+
+					}
+					else if (imgID.src = "/img/mountains.jpg")
+					{
+						terrainName = "Mountains";
+
+					}
+					else if (imgID.src = "/img/plains.jpg")
+					{
+						terrainName = "Plains";
+
+					}
+					else if (imgID.src = "/img/forest.jpg")
+					{
+						terrainName = "Forest";
+
+					}
+					else if (imgID.src = "/img/desert.jpg")
+					{
+						terrainName = "Desert";
+
+					}
+				}
 
 
             function getValue(){
@@ -87,17 +127,28 @@
              document.onkeypress = function (e) {
     if (e.keyCode === 32) {
         getValue();
-        gameValues();
+        
     }
   }
 
   document.body.addEventListener("keydown", function (event) {
 		    if (event.keyCode === 13)  {
 		    	gameValues();
+
+		    	getTerrain();
+
 		    	days += 1;
 		    	document.getElementById('daysNumber').innerHTML = days;
 		    	document.getElementById('milesNumber').innerHTML = traveledMiles;
 		    	document.getElementById('currPace').innerHTML = theCurrentPace;
+
+		    	document.getElementById('currTerrain').innerHTML = terrainName;
+		    	if(paceVal != 4){
+		    	var imgChange = document.getElementById('trailPics');
+				
+				    imgChange.src = images[Math.floor(Math.random() * images.length)];
+				}
+				
 		    }
 
 
