@@ -53,35 +53,7 @@
 				];
 
 
-				function getTerrain(){
-					
-					var imgID = document.getElementById('trailPics').innerHTML;
-					if (imgID.src == "/img/grassland.jpg")
-					{
-						terrainName = "Grassland";
-
-					}
-					else if (imgID.src == "/img/mountains.jpg")
-					{
-						terrainName = "Mountains";
-
-					}
-					else if (imgID.src == "/img/plains.jpg")
-					{
-						terrainName = "Plains";
-
-					}
-					else if (imgID.src == "/img/forest.jpg")
-					{
-						terrainName = "Forest";
-
-					}
-					else if (imgID.src == "/img/desert.jpg")
-					{
-						terrainName = "Desert";
-
-					}
-				}
+				
 				
 
 
@@ -187,6 +159,38 @@ var alwaysTrue
          		console.log(milesPerDay);
          		console.log(traveledMiles);
             }
+
+            function getTerrain(){
+					
+					var imgID = document.getElementById('trailPics').innerHTML;
+					if (imgID.src == "/img/grassland.jpg")
+					{
+
+						terrainName = "Grassland";
+						console.log("grass");
+
+					}
+					else if (imgID.src == "/img/mountains.jpg")
+					{
+						terrainName = "Mountains";
+
+					}
+					else if (imgID.src == "/img/plains.jpg")
+					{
+						terrainName = "Plains";
+
+					}
+					else if (imgID.src == "/img/forest.jpg")
+					{
+						terrainName = "Forest";
+
+					}
+					else if (imgID.src == "/img/desert.jpg")
+					{
+						terrainName = "Desert";
+
+					}
+				}
 
 
 		    	function getWeather(){
@@ -313,11 +317,11 @@ var alwaysTrue
 
 
 
-
+            	getTerrain();
 		    	getWeather();
 		    	checkWeather();
 		    	gameValues();
-		    	getTerrain();
+		    	
 		    	probDie();
 
 		    	//getTerrain();
@@ -326,7 +330,7 @@ var alwaysTrue
 		    	days += 1;
 		    	document.getElementById('daysNumber').innerHTML = days;
 		    	document.getElementById('groupHealth').innerHTML = health;
-		    	
+		    	document.getElementById('currTerrain').innerHTML = terrainName;
 		    	document.getElementById('milesNumber').innerHTML = traveledMiles;
 		    	document.getElementById('currPace').innerHTML = theCurrentPace;
 		    	document.getElementById('memberNumber').innerHTML = playersAlive;
@@ -366,7 +370,27 @@ var alwaysTrue
 		    	if(paceVal != 4){
 
 		    	document.getElementById('trailPics').src = images[Math.floor(Math.random() * images.length)];
-		    	terrainName = document.getElementById('trailPics').innerHTML.src;
+		    	
+		    	if(document.getElementById('trailPics').src == "/img/grassland.jpg"){
+		    		terrainName = "Grassland";
+		    	}
+		    	else if(document.getElementById('trailPics').innerHTML.src == "/img/mountains.jpg"){
+		    		terrainName = "Mountains";
+		    	}
+		    	
+		    	else if(document.getElementById('trailPics').innerHTML.src == "/img/plains.jpg"){
+		    		terrainName = "Plains";
+		    	}
+		    	
+		    	else if(document.getElementById('trailPics').innerHTML.src == "/img/desert.jpg"){
+		    		terrainName = "Desert";
+		    	}
+		    	
+		    	else if(document.getElementById('trailPics').innerHTML.src == "/img/forest.jpg"){
+		    		terrainName = "Forest";
+		    	}
+		    	
+		    	
 				
 
 				    
