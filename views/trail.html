@@ -55,7 +55,7 @@
 
 				function getTerrain(){
 					
-					var imgID = document.getElementById('trailPics');
+					var imgID = document.getElementById('trailPics').innerHTML;
 					if (imgID.src == "/img/grassland.jpg")
 					{
 						terrainName = "Grassland";
@@ -94,6 +94,25 @@
 
 
             function probDie(){
+            	var deathProb = Math.random() * 1;
+					if(health >= 20 && health < 50){
+						if(deathProb < 0.03){
+						window.dieMsg = alert("A member has died in your party.");
+						playersAlive -= 1;
+						console.log(playersAlive);
+					}
+					}
+					else if(health >= 0 && health < 20){
+						if(deathProb < 0.10)
+						{
+						window.dieMsg = alert("A member has died in your party.");
+						playersAlive -= 1;
+						console.log(playersAlive);
+					}
+					}
+					else{
+						console.log(playersAlive);
+					}
             	
             }
 
@@ -124,6 +143,10 @@ var alwaysTrue
 		    	if(health <= 0)
 		    	{
 		    		window.winMsg = alert("You have lost!");
+		    		window.location.replace("/mainmenu");
+		    	}
+		    	if(playersAlive == 0){
+		    		window.winMsg = alert("You have lost! Everyone died!");
 		    		window.location.replace("/mainmenu");
 		    	}
 		    	
@@ -295,6 +318,7 @@ var alwaysTrue
 		    	checkWeather();
 		    	gameValues();
 		    	getTerrain();
+		    	probDie();
 
 		    	//getTerrain();
 		    	
