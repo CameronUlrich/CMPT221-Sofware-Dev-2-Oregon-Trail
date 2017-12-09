@@ -36,6 +36,7 @@
       
       <script type="text/javascript">
          <!--
+         	var currWeather = "Normal"
          	var days = 0;
          	var playersAlive = 5;
          	var health = 100;
@@ -128,7 +129,24 @@
 
 
             function getWeather(){
-            	var weatherArray [];
+            	var weatherArray = ["Very Hot", "Hot", "Rain", "Cool", "Cold", "Very Cold", "Warm", "Heavy Rain", "Snow", "Blizzard", "Heavy Fog"];
+
+					var weatherProb = Math.random() * 1;
+					if (weatherProb < 0.2){
+					    var weatherNum = Math.floor(Math.random() * 5) + 0;
+					    currWeather = weatherArray[weatherNum];
+					    console.log(currWeather);
+					}
+					else if (weatherProb < 0.1){
+					    var weatherNum = Math.floor(Math.random() * 6) + 6;
+					    currWeather = weatherArray[weatherNum];
+					    console.log(currWeather);
+					}
+					else if (weatherProb < 0.05){
+						var weatherNum = Math.floor(Math.random() * 10) + 7;
+					    currWeather = weatherArray[weatherNum];
+					    console.log(currWeather);
+					}
             }
 
 
@@ -162,7 +180,7 @@ var alwaysTrue
 
 
 
-
+		    	getWeather();
 		    	gameValues();
 
 		    	//getTerrain();
@@ -171,6 +189,7 @@ var alwaysTrue
 		    	days += 1;
 		    	document.getElementById('daysNumber').innerHTML = days;
 		    	document.getElementById('groupHealth').innerHTML = health;
+		    	document.getElementById('weather').innerHTML = currWeather;
 		    	document.getElementById('milesNumber').innerHTML = traveledMiles;
 		    	document.getElementById('currPace').innerHTML = theCurrentPace;
 		    	document.getElementById('memberNumber').innerHTML = playersAlive;
