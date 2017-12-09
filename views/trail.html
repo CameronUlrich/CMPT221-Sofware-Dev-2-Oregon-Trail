@@ -36,7 +36,7 @@
       
       <script type="text/javascript">
          <!--
-         	var currWeather = "Normal"
+         	var terrainName = "";
          	var days = 0;
          	var playersAlive = 5;
          	var health = 100;
@@ -51,7 +51,8 @@
   			"/img/desert.jpg"
 				];
 
-				/*function getTerrain(){
+
+				function getTerrain(){
 					
 					var imgID = document.getElementById('trailPics');
 					if (imgID.src = "/img/grassland.jpg")
@@ -80,7 +81,7 @@
 
 					}
 				}
-				*/
+				
 
 
             function getValue(){
@@ -127,26 +128,91 @@
             }
 
 
+            function probDie(){
+            	
+            }
+
 
             function getWeather(){
-            	var weatherArray = ["Very Hot", "Hot", "Rain", "Cool", "Cold", "Very Cold", "Warm", "Heavy Rain", "Snow", "Blizzard", "Heavy Fog"];
-
+            	//var weatherArray = ["Very Hot", "Hot", "Rain", "Cool", "Cold", "Very Cold", "Warm", "Heavy Rain", "Snow", "Blizzard", "Heavy Fog"];
+            	var weather1 = ["Very Hot", "Hot", "Rain", "Cool", "Cold", "Very Cold"];
+            	var weather2 = ["Warm"];
+            	var weather3 = ["Heavy Rain", "Snow", "Blizzard", "Heavy Fog"];
+            		window.currWeather = "Normal"
 					var weatherProb = Math.random() * 1;
-					if (weatherProb < 0.2){
-					    var weatherNum = Math.floor(Math.random() * 5) + 0;
-					    currWeather = weatherArray[weatherNum];
+					if(weatherProb > 0.2){
+						currWeather = "Normal";
+						console.log(currWeather);
+					}
+					if (weatherProb <= 0.2){
+					    var weatherNum = Math.floor(Math.random() * weather1.length);
+					    currWeather = weather1[weatherNum];
 					    console.log(currWeather);
 					}
-					else if (weatherProb < 0.1){
-					    var weatherNum = Math.floor(Math.random() * 6) + 6;
-					    currWeather = weatherArray[weatherNum];
+					if (weatherProb <= 0.1){
+					    var weatherNum = Math.floor(Math.random() * weather2.length);
+					    currWeather = weather2[weatherNum];
 					    console.log(currWeather);
 					}
-					else if (weatherProb < 0.05){
-						var weatherNum = Math.floor(Math.random() * 10) + 7;
-					    currWeather = weatherArray[weatherNum];
+					if (weatherProb <= 0.05){
+						var weatherNum = Math.floor(Math.random() * weather3.length);
+					    currWeather = weather3[weatherNum];
 					    console.log(currWeather);
 					}
+					console.log(weatherProb);
+					
+            }
+
+            function checkWeather(){
+            	if(currWeather = "Normal"){
+            		health += 0;
+            		milesPerDay *= 0;
+            	}
+            	else if(currWeather = "Very Hot"){
+			   		health -= 8;
+			   		milesPerDay *= 0.7;
+			   }
+			   else if(currWeather = "Hot"){
+			   		health -= 3;
+			   		milesPerDay *= 0.9;
+			   }
+			   else if(currWeather = "Warm"){
+			   		health += 1;
+			   		milesPerDay *= 1;
+			   }
+			   else if(currWeather = "Cool"){
+			   		health += 1;
+			   		milesPerDay *= 0.95;
+			   }
+			   else if(currWeather = "Cold"){
+			   		health -= 5;
+			   		milesPerDay *= 0.8;
+			   }
+			   else if(currWeather = "Very Cold"){
+			   		health -= 12;
+			   		milesPerDay *= 0.7;
+			   }
+			   else if(currWeather = "Rain"){
+			   		health -= 4;
+			   		milesPerDay *= 0.6;
+			   }
+			   else if(currWeather = "Heavy Rain"){
+			   		health -= 8;
+			   		milesPerDay *= 0.4;
+			   }
+			   else if(currWeather = "Snow"){
+			   		health -= 15;
+			   		milesPerDay *= 0.3;
+			   }
+			   else if(currWeather = "Blizzard"){
+			   		health -= 30;
+			   		milesPerDay *= 0.1;
+			   }
+			   else if(currWeather = "Heavy Fog"){
+			   		health -= 3;
+			   		milesPerDay *= 0.5;
+			   }
+			   
             }
 
 
@@ -162,7 +228,7 @@
 var alwaysTrue
   document.body.addEventListener("keydown", function (event) {
 		    if (event.keyCode === 13)  {
-		    	if(traveledMiles >= 400)
+		    	if(traveledMiles >= 500)
 		    	{
 		    		window.winMsg = alert("You have won!");
 		    		window.location.replace("/mainmenu");
@@ -175,16 +241,18 @@ var alwaysTrue
 		    	}
 		    	
 
-
+		    	 
 
 
 
 
 		    	getWeather();
+		    	checkWeather();
 		    	gameValues();
+		    	getTerrain();
 
 		    	//getTerrain();
-		    	var terrainName = "Nowhere";
+		    	
 
 		    	days += 1;
 		    	document.getElementById('daysNumber').innerHTML = days;
@@ -206,6 +274,9 @@ var alwaysTrue
 			  
 
 
+
+
+
 			   if(theCurrentPace == "Steady"){
 			   	document.getElementById("wagon").style.left = leftSteadyPx;
 			   }
@@ -221,12 +292,14 @@ var alwaysTrue
 			   
 			   
 
-
-		    	document.getElementById('currTerrain').innerHTML = terrainName;
+			   //document.getElementById('currentTerrain').innerHTML = terrainName;
+		    	
 		    	if(paceVal != 4){
+
 		    	var imgChange = document.getElementById('trailPics');
 				
 				    imgChange.src = images[Math.floor(Math.random() * images.length)];
+				
 
 				    
 				}
