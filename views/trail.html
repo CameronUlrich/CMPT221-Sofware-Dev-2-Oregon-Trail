@@ -126,6 +126,12 @@
             }
 
 
+
+            function getWeather(){
+            	var weatherArray [];
+            }
+
+
            
 
 
@@ -138,7 +144,17 @@
 var alwaysTrue
   document.body.addEventListener("keydown", function (event) {
 		    if (event.keyCode === 13)  {
+		    	if(traveledMiles >= 400)
+		    	{
+		    		window.winMsg = alert("You have won!");
+		    		window.location.replace("/mainmenu");
+		    	}
 
+		    	if(health <= 0)
+		    	{
+		    		window.winMsg = alert("You have lost!");
+		    		window.location.replace("/mainmenu");
+		    	}
 		    	
 
 
