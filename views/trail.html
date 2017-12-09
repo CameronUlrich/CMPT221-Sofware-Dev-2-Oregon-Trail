@@ -56,27 +56,27 @@
 				function getTerrain(){
 					
 					var imgID = document.getElementById('trailPics');
-					if (imgID.src = "/img/grassland.jpg")
+					if (imgID.src == "/img/grassland.jpg")
 					{
 						terrainName = "Grassland";
 
 					}
-					else if (imgID.src = "/img/mountains.jpg")
+					else if (imgID.src == "/img/mountains.jpg")
 					{
 						terrainName = "Mountains";
 
 					}
-					else if (imgID.src = "/img/plains.jpg")
+					else if (imgID.src == "/img/plains.jpg")
 					{
 						terrainName = "Plains";
 
 					}
-					else if (imgID.src = "/img/forest.jpg")
+					else if (imgID.src == "/img/forest.jpg")
 					{
 						terrainName = "Forest";
 
 					}
-					else if (imgID.src = "/img/desert.jpg")
+					else if (imgID.src == "/img/desert.jpg")
 					{
 						terrainName = "Desert";
 
@@ -90,43 +90,7 @@
                
                console.log(paceVal);
             }
-            function gameValues(){
-            	if(paceVal == 1){
-            		milesPerDay = 20;
-            		traveledMiles += 20;
-            		theCurrentPace = "Steady";
-            	}
-            	else if(paceVal == 2){
-            		milesPerDay = 25;
-            		traveledMiles += 25;
-         			health -= 3;
-            		theCurrentPace = "Strenuous";
-            	}
-            	else if(paceVal == 3){
-            		milesPerDay = 30;
-            		traveledMiles += 30;
-         			health -= 8;
-            		theCurrentPace = "Grueling";
-            	}
-            	else if(paceVal == 4){
-            		milesPerDay = 0;
-            		if(health < 100){
-         			health += 5;
-         		}
-         		else if(health > 100){
-         			health = 100;
-            		
-         		}
-         		theCurrentPace = "Resting";
-            	}
-            	else{
-            		window.paceError = alert("That is not a valid answer!");
-
-            	}
-            	console.log(health);
-         		console.log(milesPerDay);
-         		console.log(traveledMiles);
-            }
+            
 
 
             function probDie(){
@@ -163,6 +127,43 @@ var alwaysTrue
 		    		window.location.replace("/mainmenu");
 		    	}
 		    	
+		    	function gameValues(){
+            	if(paceVal == 1){
+            		
+            		traveledMiles += 20;
+            		theCurrentPace = "Steady";
+            	}
+            	else if(paceVal == 2){
+            		
+            		traveledMiles += 25;
+         			health -= 3;
+            		theCurrentPace = "Strenuous";
+            	}
+            	else if(paceVal == 3){
+            		
+            		traveledMiles += 30;
+         			health -= 8;
+            		theCurrentPace = "Grueling";
+            	}
+            	else if(paceVal == 4){
+            		
+            		if(health < 100){
+         			health += 5;
+         		}
+         		else if(health > 100){
+         			health = 100;
+            		
+         		}
+         		theCurrentPace = "Resting";
+            	}
+            	else{
+            		window.paceError = alert("That is not a valid answer!");
+
+            	}
+            	console.log(health);
+         		console.log(milesPerDay);
+         		console.log(traveledMiles);
+            }
 
 
 		    	function getWeather(){
@@ -175,24 +176,28 @@ var alwaysTrue
 					if(weatherProb > 0.2){
 						currWeather = "Normal";
 						document.getElementById('weather').innerHTML = currWeather;
+						currWeather = document.getElementById('weather').innerHTML;
 						console.log(currWeather);
 					}
 					if (weatherProb <= 0.2){
 					    var weatherNum = Math.floor(Math.random() * weather1.length);
 					    currWeather = weather1[weatherNum];
 					    document.getElementById('weather').innerHTML = currWeather;
+					    currWeather = document.getElementById('weather').innerHTML;
 					    console.log(currWeather);
 					}
 					if (weatherProb <= 0.1){
 					    var weatherNum = Math.floor(Math.random() * weather2.length);
 					    currWeather = weather2[weatherNum];
 					    document.getElementById('weather').innerHTML = currWeather;
+					    currWeather = document.getElementById('weather').innerHTML;
 					    console.log(currWeather);
 					}
 					if (weatherProb <= 0.05){
 						var weatherNum = Math.floor(Math.random() * weather3.length);
 					    currWeather = weather3[weatherNum];
 					    document.getElementById('weather').innerHTML = currWeather;
+					    currWeather = document.getElementById('weather').innerHTML;
 					    console.log(currWeather);
 					}
 					console.log(weatherProb);
@@ -201,55 +206,84 @@ var alwaysTrue
 
 
 
-		    	function checkWeather(){
-            	if(currWeather = "Normal"){
-            		health += 0;
-            		milesPerDay *= 0;
-            	}
-            	else if(currWeather = "Very Hot"){
+		  function checkWeather(){
+            	if(currWeather == "Very Hot"){
 			   		health -= 8;
 			   		milesPerDay *= 0.7;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Hot"){
+			   else if(currWeather == "Hot"){
 			   		health -= 3;
 			   		milesPerDay *= 0.9;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Warm"){
+			   else if(currWeather == "Warm"){
 			   		health += 1;
 			   		milesPerDay *= 1;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Cool"){
+			   else if(currWeather == "Cool"){
 			   		health += 1;
 			   		milesPerDay *= 0.95;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Cold"){
+			   else if(currWeather == "Cold"){
 			   		health -= 5;
 			   		milesPerDay *= 0.8;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Very Cold"){
+			   else if(currWeather == "Very Cold"){
 			   		health -= 12;
 			   		milesPerDay *= 0.7;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Rain"){
+			   else if(currWeather == "Rain"){
 			   		health -= 4;
 			   		milesPerDay *= 0.6;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Heavy Rain"){
+			   else if(currWeather == "Heavy Rain"){
 			   		health -= 8;
 			   		milesPerDay *= 0.4;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Snow"){
+			   else if(currWeather == "Snow"){
 			   		health -= 15;
 			   		milesPerDay *= 0.3;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Blizzard"){
+			   else if(currWeather == "Blizzard"){
 			   		health -= 30;
 			   		milesPerDay *= 0.1;
+			   		console.log("subtracted");
 			   }
-			   else if(currWeather = "Heavy Fog"){
+			   else if(currWeather == "Heavy Fog"){
 			   		health -= 3;
 			   		milesPerDay *= 0.5;
+			   		console.log("subtracted");
 			   }
+			   else{
+			   	health += 0;
+			   	if(paceVal == 1){
+            		milesPerDay = 20;
+            		
+            	}
+            	else if(paceVal == 2){
+            		milesPerDay = 25;
+            		
+            	}
+            	else if(paceVal == 3){
+            		milesPerDay = 30;
+            		
+            	}
+            	else if(paceVal == 4){
+            		milesPerDay = 0;
+            		
+         		}
+			   	console.log("ez");
+
+			   }
+			   console.log("test");
 			   
             }
 		    	 
@@ -307,9 +341,8 @@ var alwaysTrue
 		    	
 		    	if(paceVal != 4){
 
-		    	var imgChange = document.getElementById('trailPics');
-				
-				    imgChange.src = images[Math.floor(Math.random() * images.length)];
+		    	document.getElementById('trailPics').src = images[Math.floor(Math.random() * images.length)];
+		    	terrainName = document.getElementById('trailPics').innerHTML.src;
 				
 
 				    
