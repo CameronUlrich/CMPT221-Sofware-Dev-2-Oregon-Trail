@@ -36,6 +36,7 @@
       
       <script type="text/javascript">
          <!--
+         	var currWeather = "Normal";
          	var terrainName = "";
          	var days = 0;
          	var playersAlive = 5;
@@ -133,37 +134,74 @@
             }
 
 
-            function getWeather(){
+            
+
+            
+
+
+           
+
+
+             document.onkeypress = function (e) {
+    if (e.keyCode === 32) {
+        getValue();
+        
+    }
+  }
+var alwaysTrue
+  document.body.addEventListener("keydown", function (event) {
+		    if (event.keyCode === 13)  {
+		    	if(traveledMiles >= 500)
+		    	{
+		    		window.winMsg = alert("You have won!");
+		    		window.location.replace("/mainmenu");
+		    	}
+
+		    	if(health <= 0)
+		    	{
+		    		window.winMsg = alert("You have lost!");
+		    		window.location.replace("/mainmenu");
+		    	}
+		    	
+
+
+		    	function getWeather(){
             	//var weatherArray = ["Very Hot", "Hot", "Rain", "Cool", "Cold", "Very Cold", "Warm", "Heavy Rain", "Snow", "Blizzard", "Heavy Fog"];
             	var weather1 = ["Very Hot", "Hot", "Rain", "Cool", "Cold", "Very Cold"];
             	var weather2 = ["Warm"];
             	var weather3 = ["Heavy Rain", "Snow", "Blizzard", "Heavy Fog"];
-            		window.currWeather = "Normal"
+            		
 					var weatherProb = Math.random() * 1;
 					if(weatherProb > 0.2){
 						currWeather = "Normal";
+						document.getElementById('weather').innerHTML = currWeather;
 						console.log(currWeather);
 					}
 					if (weatherProb <= 0.2){
 					    var weatherNum = Math.floor(Math.random() * weather1.length);
 					    currWeather = weather1[weatherNum];
+					    document.getElementById('weather').innerHTML = currWeather;
 					    console.log(currWeather);
 					}
 					if (weatherProb <= 0.1){
 					    var weatherNum = Math.floor(Math.random() * weather2.length);
 					    currWeather = weather2[weatherNum];
+					    document.getElementById('weather').innerHTML = currWeather;
 					    console.log(currWeather);
 					}
 					if (weatherProb <= 0.05){
 						var weatherNum = Math.floor(Math.random() * weather3.length);
 					    currWeather = weather3[weatherNum];
+					    document.getElementById('weather').innerHTML = currWeather;
 					    console.log(currWeather);
 					}
 					console.log(weatherProb);
 					
             }
 
-            function checkWeather(){
+
+
+		    	function checkWeather(){
             	if(currWeather = "Normal"){
             		health += 0;
             		milesPerDay *= 0;
@@ -214,33 +252,6 @@
 			   }
 			   
             }
-
-
-           
-
-
-             document.onkeypress = function (e) {
-    if (e.keyCode === 32) {
-        getValue();
-        
-    }
-  }
-var alwaysTrue
-  document.body.addEventListener("keydown", function (event) {
-		    if (event.keyCode === 13)  {
-		    	if(traveledMiles >= 500)
-		    	{
-		    		window.winMsg = alert("You have won!");
-		    		window.location.replace("/mainmenu");
-		    	}
-
-		    	if(health <= 0)
-		    	{
-		    		window.winMsg = alert("You have lost!");
-		    		window.location.replace("/mainmenu");
-		    	}
-		    	
-
 		    	 
 
 
@@ -257,7 +268,7 @@ var alwaysTrue
 		    	days += 1;
 		    	document.getElementById('daysNumber').innerHTML = days;
 		    	document.getElementById('groupHealth').innerHTML = health;
-		    	document.getElementById('weather').innerHTML = currWeather;
+		    	
 		    	document.getElementById('milesNumber').innerHTML = traveledMiles;
 		    	document.getElementById('currPace').innerHTML = theCurrentPace;
 		    	document.getElementById('memberNumber').innerHTML = playersAlive;
